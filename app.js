@@ -12,7 +12,7 @@ app.post("/", function(req,res){
     const query = req.body.cityName;
     const apiKey = "ec57c4fdfc82d3f2d9730d53982274e1";
     const units = "metric"
-    https.get("https://api.openweathermap.org/data/2.5/weather?q="+query+"&appid="+apiKey+"&units="+units, function(response){
+    https.get("https://api.openweathermap.org/data/3.0/onecall?q="+query+"&appid="+apiKey+"&units="+units, function(response){
         console.log(response.statusCode);
         response.on("data", function(data){
            const weatherData = JSON.parse(data)
